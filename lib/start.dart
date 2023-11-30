@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roller_dice_app/roller_dice.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Start extends StatefulWidget {
   const Start({super.key});
@@ -49,7 +50,12 @@ class _StartState extends State<Start> {
                   margin: const EdgeInsets.only(bottom: 100),
                   child: const Text(
                     'Welcome to Roller Dice Game!',
-                    style: TextStyle(color: Colors.white, fontSize: 32),
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0), 
+                      fontSize: 32,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w700,
+                      ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -60,7 +66,7 @@ class _StartState extends State<Start> {
                     });
                   },
                   style: TextButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(22, 64, 214, 1.0),
+                    backgroundColor: const Color.fromRGBO(22, 64, 214, 1.0),
                     foregroundColor: Colors.white,
                     textStyle: const TextStyle(fontSize: 28),
                     shape: RoundedRectangleBorder(
