@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:roller_dice_app/roller_dice.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Start extends StatefulWidget {
   const Start({super.key});
@@ -25,7 +24,7 @@ class _StartState extends State<Start> {
               InkWell(
                 child: const Text(
                   '< Back to Home',
-                  style: TextStyle(color: Colors.lightBlue, fontSize: 20),
+                  style: TextStyle(color: Color.fromARGB(255, 22, 0, 109), fontSize: 20),
                 ),
                 onTap: () {
                   setState(() {
@@ -53,7 +52,6 @@ class _StartState extends State<Start> {
                     style: TextStyle(
                       color: Color.fromARGB(255, 0, 0, 0), 
                       fontSize: 32,
-                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.w700,
                       ),
                     textAlign: TextAlign.center,
