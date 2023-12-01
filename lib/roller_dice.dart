@@ -15,9 +15,6 @@ class _RollerDiceState extends State<RollerDice> {
   int playerTwoWins = 0;
   int playerOneRoud = 1;
   int playerTwoRoud = 1;
-  List<int> playerOneScores = [];
-  List<int> playerTwoScores = [];
-  String winner = '';
  
   playerOneAction() {
     setState(() {
@@ -44,38 +41,10 @@ class _RollerDiceState extends State<RollerDice> {
     }
     return false;
   }
-  reset() {
-  setState(() {
-    diceNumber = 1;
-    round = 0;
-    playerOneWins = 0;
-    playerTwoWins = 0;
-    playerOneRoud = 1;
-    playerTwoRoud = 1;
-    playerOneScores = [];
-    playerTwoScores = [];
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        round == numberOfRounds
-            ? Column(
-                children: [
-                  const Text('Game Over!',
-                      style: TextStyle(color: Colors.red, fontSize: 28)),
-                  Text(//whoWins,
-                      style:
-                          const TextStyle(color: Colors.green, fontSize: 28)),
-                  TextButton(
-                      onPressed: reset,
-                      child: const Text('Start a New Game!',
-                          style: TextStyle(color: Colors.blue, fontSize: 20))),
-                ],
-              )
-            : Column(
+      
                 children: [
                   Text(
                     'Round ${(round + 1)}',
@@ -95,9 +64,7 @@ class _RollerDiceState extends State<RollerDice> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
-                          onPressed: isPlayerOneButtonDisable()
-                              ? null
-                              : playerOneAction,
+                          onPressed: playerOneAction,
                           style: TextButton.styleFrom(
                               backgroundColor: Colors.pink,
                               foregroundColor: Colors.white,
@@ -107,12 +74,7 @@ class _RollerDiceState extends State<RollerDice> {
                         width: 20,
                       ),
                       TextButton(
-                          onPressed: isPlayerTwoButtonDisable()
-                              ? null
-                              : () {
-                                  playerTwoAction();
-                                  updateRound();
-                                },
+                          onPressed: playerTwoAction(),
                           style: TextButton.styleFrom(
                               backgroundColor: Colors.pink,
                               foregroundColor: Colors.white,
@@ -121,54 +83,6 @@ class _RollerDiceState extends State<RollerDice> {
                     ],
                   ),
                 ],
-              ),
-        const SizedBox(
-          height: 20,
-        ),
-        Text(
-          'Player 1: $playerOneWins-$playerTwoWins :Player 2',
-          style: const TextStyle(color: Colors.white, fontSize: 24),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                const Text('Round #',
-                    style: TextStyle(color: Colors.black, fontSize: 20)),
-                for (int r = 1; r <= playerOneScores.length; r++)
-                  Text(
-                    'Round $r',
-                  )
-              ],
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Column(
-              children: [
-                const Text('Player 1',
-                    style: TextStyle(color: Colors.black, fontSize: 20)),
-                for (var value in playerOneScores) Text(value.toString())
-              ],
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Column(
-              children: [
-                const Text('Player 2',
-                    style: TextStyle(color: Colors.black, fontSize: 20)),
-                for (var value in playerTwoScores) Text(value.toString())
-              ],
-            )
-          ],
-        )
-      ],
-    );
-              
+              );
   }
 }
