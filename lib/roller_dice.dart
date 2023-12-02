@@ -11,6 +11,7 @@ const numberOfRounds = 5;
 
 class _RollerDiceState extends State<RollerDice> {
   int diceNumber = 1;
+  
   int round = 0;
   int playerOneWins = 0;
   int playerTwoWins = 0;
