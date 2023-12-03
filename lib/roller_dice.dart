@@ -37,11 +37,11 @@ class _RollerDiceState extends State<RollerDice> {
       }
       if (round == numberOfRounds) {
         if (playerOneWins > playerTwoWins) {
-          whoWins = 'Player 1 Wins!';
+          whoWins = 'Congratulations! Player 1 Wins';
         } else if (playerTwoWins > playerOneWins) {
-          whoWins = 'Player 2 Wins!';
+          whoWins = 'Congratulations! Player 2 Wins ';
         } else {
-          whoWins = 'It\'s a Draw!';
+          whoWins = 'Yay! It\'s a Draw';
         }
       }
     });
