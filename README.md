@@ -33,7 +33,7 @@ The Roller Dice Application has been extended to support multiplayer gameplay. N
 2. Click on the 'Play New Game' button.
 3. Player 1 and Player 2 'Roll Once' buttons will appear.
 4. Players take turns clicking their respective 'Roll Once' buttons for each round.
-5. Play continues for 5 rounds.
+5. Play continues for 5 rounds all the round by round data will display.
 6. After the 5th round, the winner is determined based on the overall results.
 7. View the game summary to see the details of each round.
 
